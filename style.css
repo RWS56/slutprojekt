@@ -1,13 +1,23 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 20px;
     background-color: #f8f9fa;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+}                                                               
+
+.header-right{                                                               
+    margin-left: auto;                                                                 
+}
+
+.header-left {
+    margin-right: auto;
 }
 
 .logo img {
