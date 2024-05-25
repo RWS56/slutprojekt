@@ -1,1 +1,1 @@
-Gör main knapparna snyggare
+Footer så att texten är centrerad för hela skärmen

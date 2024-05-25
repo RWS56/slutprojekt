@@ -116,7 +116,7 @@ footer {
     width: 100%;
     z-index: 1000;
     /*Eventuellt ta bort och sänk bagrundens linear gradient dvs gör ljusare*/
-    background: rgba(255, 255, 255, 0.05);
+    /*background: rgba(255, 255, 255, 0.05);*/
 }
 
 .copyright {
@@ -168,6 +168,10 @@ footer {
     opacity: 1;
     transform: translateX(0);
     transition-delay: 0s;
+}
+
+.hidden-button{
+    display: none;
 }
 
 @keyframes shake {

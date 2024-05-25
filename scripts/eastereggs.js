@@ -15,6 +15,7 @@ document.getElementById("logo").addEventListener("click", (e) => {
         if (logoClicks >= 5) {
             logo.style.animation = "swing 5.5s forwards";
             delete logo;
+            document.getElementById("hiddenBtn").style.display = "block";
         }
     }, 500);
 });
@@ -58,3 +59,99 @@ function createParticle(e) { //baserad på partiklar från js spel jag gjort tid
         particle.remove();
     };
 }
+
+function getRandomPastelColor() {
+    const hue = Math.floor(Math.random() * 360);
+    const saturation = Math.floor(Math.random() * 25 + 70); // 70-95
+    const lightness = Math.floor(Math.random() * 20 + 70); // 70-90
+    return `hsl(${hue},${saturation}%,${lightness}%)`;
+}
+
+document.getElementById("hiddenBtn").addEventListener("click", (e) => {
+    e.preventDefault();
+    const button = document.getElementById("hiddenBtn");
+    button.src = "./images/redbuttonpressed.png";
+    for (let i = 0; i < 200 * window.innerWidth / 1920; i++) {
+        let ball = new Bouncyball({ x: e.pageX, y: e.pageY }, { x: Math.random() * 10 - 5, y: Math.random() * 10 - 5 }, 10, getRandomPastelColor(), 1);
+        document.body.appendChild(ball.ball);
+        ballList.push(ball);
+    }
+});
+
+let mousePos = { x: 0, y: 0 };
+window.addEventListener("mousemove", (e) => {
+    mousePos.x = e.pageX;
+    mousePos.y = e.pageY;
+});
+
+ballList = [];
+
+class Bouncyball{
+    constructor(position, velocity, radius, color, mass){
+        this.ball = document.createElement('div');
+        this.ball.style.width = radius + "px";
+        this.ball.style.height = radius + "px";
+        this.ball.style.borderRadius = "50%";
+        this.ball.style.backgroundColor = color;
+        this.ball.style.position = 'absolute';
+        this.ball.className = "ball";
+        this.position = position;
+        this.radius = radius;
+        this.mass = mass;
+        this.velocity = velocity;
+    }
+
+    update(){
+        let dx = mousePos.x - this.position.x;
+        let dy = mousePos.y - this.position.y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance > 0) {
+            dx /= distance;
+            dy /= distance;
+        }
+    
+        this.velocity.x += dx * 0.1;
+        this.velocity.x = Math.min(10, Math.max(-10, this.velocity.x));
+        this.velocity.y += dy * 0.1;
+        this.velocity.y = Math.min(10, Math.max(-10, this.velocity.y));
+
+        //set balls color based on distance
+        let hue = Math.floor(distance / 10);
+        this.ball.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
+
+        this.position.x += this.velocity.x;
+        this.position.y += this.velocity.y;
+
+        if(this.position.x + this.radius > window.innerWidth){
+            this.position.x = window.innerWidth - this.radius;
+            this.velocity.x *= -1;
+        }
+
+        if(this.position.x - this.radius < 0){
+            this.position.x = this.radius;
+            this.velocity.x *= -1;
+        }
+
+        if(this.position.y + this.radius > window.innerHeight){
+            this.position.y = window.innerHeight - this.radius;
+            this.velocity.y *= -1;
+        }
+
+        if(this.position.y - this.radius < 0){
+            this.position.y = this.radius;
+            this.velocity.y *= -1;
+        }
+
+        this.ball.style.left = this.position.x + "px";
+        this.ball.style.top = this.position.y + "px";
+    }
+}
+
+// Game loop
+function update() {
+    ballList.forEach(ball => ball.update());
+    requestAnimationFrame(update);
+}
+
+// Start the game loop
+update();
