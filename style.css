@@ -55,7 +55,7 @@ nav ul li a:hover::after {
     /*filter: drop-shadow(0 0 5px #fff);*/
 }
 
-.content {
+main {
     width: 100%;
     position: absolute;
     top: 50%;
@@ -64,12 +64,12 @@ nav ul li a:hover::after {
     color: #fff;
 }
 
-.content h1 {
+main h1 {
     font-size: 70px;
     margin-top: 80px;
 }
 
-.content p {
+main p {
     margin: 20px auto;
     font-weight: 100;
     line-height: 25px;
@@ -103,6 +103,67 @@ span {
 
 button:hover span {
     width: 100%;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    /*Eventuellt ta bort och sänk bagrundens linear gradient dvs gör ljusare*/
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.copyright {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.affiliate-links {
+    display: flex;
+    gap: 20px;
+}
+
+.affiliate-links a img {
+    height: 64px;
+    width: 64px;
+}
+
+#logo {
+    transform-origin: left center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s;
+    transform: translateX(100%);
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0s;
 }
 
 @keyframes shake {
@@ -151,10 +212,6 @@ button:hover span {
     }
 }
 
-#logo {
-    transform-origin: left center;
-}
-
 @keyframes swing {
     0% {
         transform: rotate(0deg);
@@ -173,7 +230,7 @@ button:hover span {
     }
 
     70% {
-        transform: rotate(85deg);
+        transform: rotate(87.5deg);
     }
 
     80% {

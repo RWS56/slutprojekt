@@ -5,23 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Effektivt Klassrum</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./images/logo.png">
     <script defer src="./scripts/eastereggs.js"></script>
 </head>
 <body>
     <div class="banner">
-        <nav>
-            <img src="./images/logga.png" alt="logo" class="logo" id="logo">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Seating Manager</a></li>
-                <li><a href="#">Randomize Chooser</a></li>
-                <li><a href="#">Find School Info</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-
-        <div class="content">
+        <header>
+            <nav>
+                <img src="./images/logga.png" alt="logo" class="logo" id="logo">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="./html/contacts.html">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Services</a>
+                        <div class="dropdown-content">
+                          <a href="#">Seating</a>
+                          <a href="#">Classes</a>
+                          <a href="#">School &nbsp;&nbsp;&nbsp;Info</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
             <h1>
                 Välkommen
             </h1>
@@ -34,7 +42,21 @@
                     <button type="button"><span></span>Slumpa</button>
                 </div>
             </p>
-        </div>
+        </main>
+
+        <footer>
+            <p class="copyright">
+                &copy; 2024 Effektivt Klassrum
+            </p>
+            <div class="affiliate-links">
+                <a href="https://github.com/rws56" target="_blank"><img src="./images/icons8-github.svg" alt="Github Link"></a>
+                <a href="https://www.youtube.com/channel/UCU2DMNJ138Ux1kmO8OG3nhQ" target="_blank"><img src="./images/icons8-youtube.svg" alt="Youtube Link"></a>
+                <a href="https://www.linkedin.com/in/ruben-steen-8a48b4269/" target="_blank"><img src="./images/icons8-linkedin.svg" alt="LinkedIn Link"></a>
+            </div>
+        </footer>
+    </div>
+    <div class="about">
+        
     </div>
 </body>
 </html>
