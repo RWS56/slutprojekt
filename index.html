@@ -3,32 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slutprojekt</title>
+    <title>Effektivt Klassrum</title>
     <link rel="stylesheet" href="./style.css">
-    <script defer src="./app.js"></script>
+    <script defer src="./scripts/eastereggs.js"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="header-left">
-            <div class="logo"><img src="./images/effektivlogo.png" alt="Logo"></div>
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="./index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="./about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="./contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
+    <div class="banner">
+        <nav>
+            <img src="./images/logga.png" alt="logo" class="logo" id="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Seating Manager</a></li>
+                <li><a href="#">Randomize Chooser</a></li>
+                <li><a href="#">Find School Info</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <h1>
+                Välkommen
+            </h1>
+            <p>
+                Effektivt Klassrum är en hemsida som hjälper lärare att skapa en effektiv klassrumsmiljö.<br>
+                Här kan du hitta verktyg som hjälper dig att skapa en bra sittordning,<br> slumpa fram elever 
+                för olika uppgifter och hitta information om skolor i Sverige.
+                <div class="hero-buttons">
+                    <button type="button"><span></span>Placering</button>
+                    <button type="button"><span></span>Slumpa</button>
+                </div>
+            </p>
         </div>
-        
-        <div class="header-right">
-            hej
-        </div>
-    </header>
-    <main>
-        <div class="main-img">Effektivt Klassrum</div>
-    </main>
-    <footer>
-        Effektivt Klassrum &copy; 2024
-    </footer>
+    </div>
 </body>
 </html>
