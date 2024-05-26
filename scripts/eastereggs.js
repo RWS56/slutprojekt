@@ -3,6 +3,9 @@ let logoClicks = 0;
 
 document.getElementById("logo").addEventListener("click", (e) => {
     e.preventDefault();
+
+    if (ballList.length > 0) ballList.forEach(ball => ball.ball.remove());
+
     const logo = document.getElementById("logo");
     for (let i = 0; i < 50 * window.innerWidth / 1920; i++) { //budget performance improve mindre skärmar antas vara långsammare xD
         createParticle(e);
@@ -60,22 +63,13 @@ function createParticle(e) { //baserad på partiklar från js spel jag gjort tid
     };
 }
 
-function getRandomPastelColor() {
-    const hue = Math.floor(Math.random() * 360);
-    const saturation = Math.floor(Math.random() * 25 + 70); // 70-95
-    const lightness = Math.floor(Math.random() * 20 + 70); // 70-90
-    return `hsl(${hue},${saturation}%,${lightness}%)`;
-}
-
 document.getElementById("hiddenBtn").addEventListener("click", (e) => {
     e.preventDefault();
     const button = document.getElementById("hiddenBtn");
     button.src = "./images/redbuttonpressed.png";
-    for (let i = 0; i < 200 * window.innerWidth / 1920; i++) {
-        let ball = new Bouncyball({ x: e.pageX, y: e.pageY }, { x: Math.random() * 10 - 5, y: Math.random() * 10 - 5 }, 10, getRandomPastelColor(), 1);
-        document.body.appendChild(ball.ball);
-        ballList.push(ball);
-    }
+    let ball = new Bouncyball({ x: e.pageX, y: e.pageY }, { x: Math.random() * 10 - 5, y: Math.random() * 10 - 5 }, 10, "#red", 1);
+    document.body.appendChild(ball.ball);
+    ballList.push(ball);
 });
 
 let mousePos = { x: 0, y: 0 };
@@ -86,8 +80,8 @@ window.addEventListener("mousemove", (e) => {
 
 ballList = [];
 
-class Bouncyball{
-    constructor(position, velocity, radius, color, mass){
+class Bouncyball {
+    constructor(position, velocity, radius, color, mass) {
         this.ball = document.createElement('div');
         this.ball.style.width = radius + "px";
         this.ball.style.height = radius + "px";
@@ -101,7 +95,7 @@ class Bouncyball{
         this.velocity = velocity;
     }
 
-    update(){
+    update() {
         let dx = mousePos.x - this.position.x;
         let dy = mousePos.y - this.position.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
@@ -109,7 +103,7 @@ class Bouncyball{
             dx /= distance;
             dy /= distance;
         }
-    
+
         this.velocity.x += dx * 0.1;
         this.velocity.x = Math.min(10, Math.max(-10, this.velocity.x));
         this.velocity.y += dy * 0.1;
@@ -122,22 +116,22 @@ class Bouncyball{
         this.position.x += this.velocity.x;
         this.position.y += this.velocity.y;
 
-        if(this.position.x + this.radius > window.innerWidth){
+        if (this.position.x + this.radius > window.innerWidth) {
             this.position.x = window.innerWidth - this.radius;
             this.velocity.x *= -1;
         }
 
-        if(this.position.x - this.radius < 0){
+        if (this.position.x - this.radius < 0) {
             this.position.x = this.radius;
             this.velocity.x *= -1;
         }
 
-        if(this.position.y + this.radius > window.innerHeight){
+        if (this.position.y + this.radius > window.innerHeight) {
             this.position.y = window.innerHeight - this.radius;
             this.velocity.y *= -1;
         }
 
-        if(this.position.y - this.radius < 0){
+        if (this.position.y - this.radius < 0) {
             this.position.y = this.radius;
             this.velocity.y *= -1;
         }

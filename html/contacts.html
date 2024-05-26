@@ -4,9 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script defer src="../scripts/app.js"></script>
+    <script src="../scripts/validation.js"></script>
 </head>
 <body>
-    
+    <div class="banner contact">
+        <header>
+            <nav>
+                <div id="header-container">
+                    <img src="../images/logga.png" alt="logo" class="logo" id="logo">
+                    <img src="../images/burgermenu.svg" alt="Burger Icon" class="burger" id="burger">
+                </div>
+                <ul id = "menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="./contacts.html">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Services</a>
+                        <div class="dropdown-content">
+                          <a href="#">Seating</a>
+                          <a href="#">Classes</a>
+                          <a href="#">School &nbsp;&nbsp;&nbsp;Info</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <footer>
+            <p class="copyright">
+                &copy; 2024 Effektivt Klassrum
+            </p>
+            <div class="affiliate-links">
+                <a href="https://github.com/rws56" target="_blank"><img src="../images/githubifylld.svg" alt="Github Link"></a>
+                <a href="https://www.youtube.com/channel/UCU2DMNJ138Ux1kmO8OG3nhQ" target="_blank"><img src="../images/icons8-youtube.svg" alt="Youtube Link"></a>
+                <a href="https://www.linkedin.com/in/ruben-steen-8a48b4269/" target="_blank"><img src="../images/icons8-linkedin.svg" alt="LinkedIn Link"></a>
+            </div>
+        </footer>
+    </div>
+    <main>
+        <div class="contact-container">
+            <form action="" class="contact-left">
+                <div class="contact-left-title">
+                    <h2>Get In Touch</h2>
+                    <hr>
+                </div>
+                <!--lägg till svg iconer för människa på name och email symbol för mail-->
+                <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+                <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+                <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+                <button type="submit" class="contact-inputs"><span></span>Submit</button>
+            </form>
+            <div class="contact-right">
+                <!--Lägg till nån hero eller ngt-->
+                <img src="../images/effektivlogo.png" alt="">
+            </div>
+        </div>
+    </main>
 </body>
 </html>
+
+<!--<input type="hidden" name="access_key" value="6092d94f-c542-422b-becf-4da18021fa9f">
+                action="https://api.web3forms.com/submit" method="POST"-->

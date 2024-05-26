@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    box-sizing: border-box;
 }
 
 .banner {
@@ -12,6 +13,9 @@
     background-position: center;
 }
 
+.contact {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/geometry.jpg);
+}
 
 nav {
     display: flex;
@@ -53,6 +57,11 @@ nav ul li a::after {
 nav ul li a:hover::after {
     width: 100%;
     /*filter: drop-shadow(0 0 5px #fff);*/
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
 }
 
 main {
@@ -170,8 +179,133 @@ footer {
     transition-delay: 0s;
 }
 
-.hidden-button{
+.hidden-button {
     display: none;
+}
+
+.contact-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: linear-gradient(270deg, #fff, #fff);
+    border-radius: 25px;
+}
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.contact-left-title h2 {
+    font-weight: 600;
+    color: #5c82ff;
+    font-size: 40px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.contact-left-title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: #5c82ff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.contact-inputs {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #000;
+    background-color: #dfdfdf;
+    border-radius: 50px;
+    margin-left: 10px;
+}
+
+.contact-left textarea {
+    height: 140px;
+    padding: 15px;
+    border-radius: 20px;
+    resize: none;
+}
+
+.contact-inputs:focus {
+    border: 2px solid #5c82ff;
+}
+
+.contact-inputs::placeholder {
+    color: #00000059;
+}
+
+.contact-left button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #fff;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background: #5c82ff;
+}
+
+.contact-right img {
+    width: 500px;
+}
+
+@media (max-width: 850px) {
+    nav {
+        flex-direction: column;
+    }
+
+    #menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #menu li {
+        text-align: center;
+        padding: 20px 0;
+        margin: 10px;
+        border-radius: 20px;
+        background: linear-gradient(90deg, #5c82ff, #91b4ff);
+    }
+
+    .burger {
+        display: flex;
+        margin: 15px;
+        width: 50px;
+    }
+
+    #header-container {
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .contact-inputs {
+        width: 80vw;
+    }
+
+    .contact-right {
+        display: none;
+    }
 }
 
 @keyframes shake {
