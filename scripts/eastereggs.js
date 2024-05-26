@@ -67,9 +67,11 @@ document.getElementById("hiddenBtn").addEventListener("click", (e) => {
     e.preventDefault();
     const button = document.getElementById("hiddenBtn");
     button.src = "./images/redbuttonpressed.png";
-    let ball = new Bouncyball({ x: e.pageX, y: e.pageY }, { x: Math.random() * 10 - 5, y: Math.random() * 10 - 5 }, 10, "#red", 1);
-    document.body.appendChild(ball.ball);
-    ballList.push(ball);
+    for(let i = 0; i < 5; i++) {
+        let ball = new Bouncyball({ x: e.pageX, y: e.pageY }, { x: Math.random() * 10 - 5, y: Math.random() * 10 - 5 }, 10, "#red", 1);
+        document.body.appendChild(ball.ball);
+        ballList.push(ball);
+    }
 });
 
 let mousePos = { x: 0, y: 0 };

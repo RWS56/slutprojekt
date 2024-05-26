@@ -234,6 +234,28 @@ footer {
     margin-left: 10px;
 }
 
+.person-input{
+    background-image: url("../images/person.svg");
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    background-size: 20px;
+    color: #00000059;
+}
+
+.email-input{
+    background-image: url("../images/email.svg");
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    background-size: 18px;
+    color: #00000059;
+}
+
+.contact-inputs img{
+    width: 20px;
+    position: absolute;
+    right: 20px;
+}
+
 .contact-left textarea {
     height: 140px;
     padding: 15px;
