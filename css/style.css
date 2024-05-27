@@ -297,6 +297,10 @@ footer {
     padding: 0 10%;
 }
 
+.classes-container:focus{
+    border: 3px red solid;
+}
+
 .classes-left,
 .classes-right {
     flex: 1;
@@ -330,6 +334,19 @@ footer {
     margin: 0 auto 20px;
 }
 
+#class-name{
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border-radius: 50px;
+    margin-left: 10px;
+}
+
 .classes-right textarea {
     width: 450px;
     height: 300px;
@@ -341,6 +358,31 @@ footer {
 .classes-right p {
     font-size: 20px;
     margin: 20px 0;
+}
+
+.classes-left ul li{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.classes-left ul li img {
+    width: 25px;
+    color: red;
+    cursor: pointer;
+}
+
+/*class-list*/
+.classes-left ul{
+    list-style: none;
+    padding: 0;
+    /* Jag är för freaky här att det funkar, jag kännner mig som en wizard*/
+    margin: 25px auto 0; 
+    background: #333;
+    border-radius: 20px;
+    height: 300px;
+    max-height: 300px;
+    width: 450px;
+    overflow: auto;
 }
 
 @media (max-width: 850px) {

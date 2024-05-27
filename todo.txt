@@ -1,2 +1,3 @@
 Footer så att texten är centrerad för hela skärmen
 Faktiska sidan :/
+mediaquery flr classes trots att det inte är en mobilsida
