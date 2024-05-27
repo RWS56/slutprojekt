@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Classes</title>
     <link rel="stylesheet" href="../css/style.css">
     <script defer src="../scripts/app.js"></script>
-    <script src="../scripts/validation.js"></script>
+    <script defer src="../scripts/classes.js"></script>
 </head>
 <body>
-    <div class="banner contact">
+    <div class="banner classes">
         <header>
             <nav>
                 <div id="header-container">
@@ -31,6 +31,33 @@
                 </ul>
             </nav>
         </header>
+        <main>
+            <div class="classes-container">
+                <div class="classes-left">
+                    <section>
+                        <div class="classes-left-title">
+                            <h2>Classes</h2>
+                            <hr>
+                        </div>
+                    </section>
+                    <button id="create-class" class="classes-ui">Create Class</button>
+                    <ul id="class-list">
+
+                    </ul>
+                </div>
+
+                <div class="classes-right">
+                    <section>
+                        <div class="classes-right-title">
+                            <h2>Class Info</h2>
+                            <hr>
+                        </div>
+                    </section>
+                    <p>Separate using commas(,) or new lines</p>
+                    <textarea name="list-of-student" id="student-list" placeholder="Student 1, Student 2&#10Student 3&#10Student 4"></textarea>
+                </div>
+            </div>
+        </main>
         <footer>
             <p class="copyright">
                 &copy; 2024 Effektivt Klassrum
@@ -42,27 +69,5 @@
             </div>
         </footer>
     </div>
-    <main>
-        <div class="contact-container">
-            <form action="../index.html" class="contact-left">
-                <div class="contact-left-title">
-                    <h2>Get In Touch</h2>
-                    <hr>
-                </div>
-                <!--lägg till svg iconer för människa på name och email symbol för mail-->
-                <input type="text" name="name" placeholder="Your Name" class="contact-inputs person-input" required>
-                <input type="email" name="email" placeholder=" Your Email" class="contact-inputs email-input" required>
-                <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
-                <button type="submit" class="contact-inputs">Submit <img src="../images/arrow-right.svg" alt="Submit Arrow"></button>
-            </form>
-            <div class="contact-right">
-                <!--Lägg till nån hero eller ngt-->
-                <img src="../images/effektivlogo.png" alt="">
-            </div>
-        </div>
-    </main>
 </body>
 </html>
-
-<!--<input type="hidden" name="access_key" value="6092d94f-c542-422b-becf-4da18021fa9f">
-                action="https://api.web3forms.com/submit" method="POST"-->

@@ -17,6 +17,11 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/geometry.jpg);
 }
 
+.classes {
+    background-image: linear-gradient(178deg, rgba(255, 0, 0, 0.5), rgba(255, 255, 255, 0.5)), url(../images/students.jpg);
+    /*linear-gradient(178deg, rgba(255, 0, 0, 0.5), rgba(255, 255, 255, 0.5))*/
+}
+
 nav {
     display: flex;
     width: 85%;
@@ -234,21 +239,21 @@ footer {
     margin-left: 10px;
 }
 
-.person-input{
+.person-input {
     background-image: url("../images/person.svg");
     background-repeat: no-repeat;
     background-position: 5px center;
     background-size: 20px;
 }
 
-.email-input{
+.email-input {
     background-image: url("../images/email.svg");
     background-repeat: no-repeat;
     background-position: 5px center;
     background-size: 18px;
 }
 
-.contact-inputs img{
+.contact-inputs img {
     width: 20px;
     position: absolute;
     right: 20px;
@@ -284,6 +289,58 @@ footer {
 
 .contact-right img {
     width: 500px;
+}
+
+.classes-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+}
+
+.classes-left,
+.classes-right {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.classes-left {
+    align-items: flex-start;
+}
+
+.classes-right {
+    align-items: flex-end;
+}
+
+/*kanske upprepning av kod*/
+.classes-left-title h2,
+.classes-right-title h2 {
+    font-weight: 600;
+    color: red;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.classes-left-title hr,
+.classes-right-title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: red;
+    border-radius: 10px;
+    margin: 0 auto 20px;
+}
+
+.classes-right textarea {
+    width: 450px;
+    height: 300px;
+    padding: 15px;
+    border-radius: 20px;
+    resize: none;
+}
+
+.classes-right p {
+    font-size: 20px;
+    margin: 20px 0;
 }
 
 @media (max-width: 850px) {

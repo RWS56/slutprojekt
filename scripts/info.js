@@ -1,14 +1,9 @@
-function requestNewData() {
-    fetch("https://opensky-network.org/api/states/all")
-        .then(response => response.json())
-        .then(r => {
-            /*data = r;
-            for (let i in data) {
-                console.log(i);
-            }*/
-            console.log(JSON.stringify(r));
-        })
-        .catch(error => console.log(error))
-}
+fetch("https://api.skolverket.se/skolenhetsregistret/v2/school-units", { Host: "api.skolverket.se", Cors: "no-cors" })
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => console.log(error));
 
-requestNewData();
+
+//https://api.skolverket.se/skolenhetsregistret/v1/skolenhet as-chringe skitföretag
+//https://opentdb.com/api.php?amount=10
