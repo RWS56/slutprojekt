@@ -1,3 +1,8 @@
 Footer så att texten är centrerad för hela skärmen
 Faktiska sidan :/
 mediaquery flr classes trots att det inte är en mobilsida
+Hover effekt för Classes gejer
+
+Mobilanpassad Services knapp
+Ändra schoolinfo
+Ändra bollarnas uppdateringshastighet till setinterval 1000/60

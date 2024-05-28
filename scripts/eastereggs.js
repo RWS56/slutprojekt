@@ -67,7 +67,7 @@ document.getElementById("hiddenBtn").addEventListener("click", (e) => {
     e.preventDefault();
     const button = document.getElementById("hiddenBtn");
     button.src = "./images/redbuttonpressed.png";
-    for(let i = 0; i < 5; i++) {
+    for (let i = 0; i < 100; i++) {
         let ball = new Bouncyball({ x: e.pageX, y: e.pageY }, { x: Math.random() * 10 - 5, y: Math.random() * 10 - 5 }, 10, "#red", 1);
         document.body.appendChild(ball.ball);
         ballList.push(ball);
@@ -106,14 +106,19 @@ class Bouncyball {
             dy /= distance;
         }
 
-        this.velocity.x += dx * 0.1;
-        this.velocity.x = Math.min(10, Math.max(-10, this.velocity.x));
-        this.velocity.y += dy * 0.1;
-        this.velocity.y = Math.min(10, Math.max(-10, this.velocity.y));
+        if (distance < 200) {
+            this.velocity.x += dx * 0.3;
+            this.velocity.x = Math.min(10, Math.max(-10, this.velocity.x));
+            this.velocity.y += dy * 0.3;
+            this.velocity.y = Math.min(10, Math.max(-10, this.velocity.y));
+        }
 
         //set balls color based on distance
         let hue = Math.floor(distance / 10);
         this.ball.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
+
+        //add gravity
+        this.velocity.y += 0.1;
 
         this.position.x += this.velocity.x;
         this.position.y += this.velocity.y;

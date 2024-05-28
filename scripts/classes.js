@@ -23,13 +23,20 @@ classes.forEach((classItem, index) => {
     cross.addEventListener("click", () => {
         let index = button.dataset.index;
         let confirmation = confirm(`Are you sure you want to delete "${classes[index].name}"?`);
+
         if (confirmation) {
-            classes.splice(index, 1);
             list.removeChild(listItem);
+            classes.splice(index, 1);
+
+            let remainingButtons = list.querySelectorAll("Button");
+            remainingButtons.forEach((button, index) => {
+                button.dataset.index = index;
+            });
         }
     });
 
     listItem.appendChild(button);
+    button.prepend(document.createElement("span"));
     listItem.appendChild(cross);
     list.appendChild(listItem);
 });
@@ -59,14 +66,14 @@ function saveClasses() {
     localStorage.setItem("classes", JSON.stringify(classes));
 }
 
-function addClass(){
+function addClass() {
     let list = document.getElementById("class-list");
     let listItem = document.createElement("li");
     let button = document.createElement("Button");
     let cross = document.createElement("img");
     cross.src = "../images/cross.svg";
 
-    let newClass = {name: `New Class ${classes.length}`, students: []};
+    let newClass = { name: `New Class ${classes.length}`, students: [] };
     classes.push(newClass);
 
     button.innerHTML = newClass.name;
@@ -81,10 +88,11 @@ function addClass(){
     cross.addEventListener("click", () => {
         let index = button.dataset.index;
         let confirmation = confirm(`Are you sure you want to delete "${classes[index].name}"?`);
+
         if (confirmation) {
-            classes.splice(index, 1);
             list.removeChild(listItem);
-    
+            classes.splice(index, 1);
+
             let remainingButtons = list.querySelectorAll("Button");
             remainingButtons.forEach((button, index) => {
                 button.dataset.index = index;
@@ -93,6 +101,7 @@ function addClass(){
     });
 
     listItem.appendChild(button);
+    button.prepend(document.createElement("span"));
     listItem.appendChild(cross);
     list.appendChild(listItem);
 }

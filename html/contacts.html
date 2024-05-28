@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poetsen+One&display=swap" rel="stylesheet">
     <script defer src="../scripts/app.js"></script>
     <script src="../scripts/validation.js"></script>
 </head>
@@ -17,15 +20,15 @@
                     <img src="../images/burgermenu.svg" alt="Burger Icon" class="burger" id="burger">
                 </div>
                 <ul id = "menu">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="./contacts.html">Contact</a></li>
+                    <li><a href="../index.html">Hem</a></li>
+                    <li><a href="#">Om Oss</a></li>
+                    <li><a href="./contacts.html">Kontakt</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropbtn">Services</a>
+                        <a href="#" class="dropbtn">Tjänster</a>
                         <div class="dropdown-content">
-                          <a href="#">Seating</a>
-                          <a href="./classes.html">Classes</a>
-                          <a href="#">School &nbsp;&nbsp;&nbsp;Info</a>
+                          <a href="#">Platser</a>
+                          <a href="./classes.html">Klasser</a>
+                          <a href="#">Kuriosa</a>
                         </div>
                     </li>
                 </ul>
@@ -44,12 +47,12 @@
     </div>
     <main>
         <div class="contact-container">
-            <form action="../index.html" class="contact-left">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
                 <div class="contact-left-title">
                     <h2>Get In Touch</h2>
                     <hr>
                 </div>
-                <!--lägg till svg iconer för människa på name och email symbol för mail-->
+                <input type="hidden" name="access_key" value="6092d94f-c542-422b-becf-4da18021fa9f">
                 <input type="text" name="name" placeholder="Your Name" class="contact-inputs person-input" required>
                 <input type="email" name="email" placeholder=" Your Email" class="contact-inputs email-input" required>
                 <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
@@ -63,6 +66,3 @@
     </main>
 </body>
 </html>
-
-<!--<input type="hidden" name="access_key" value="6092d94f-c542-422b-becf-4da18021fa9f">
-                action="https://api.web3forms.com/submit" method="POST"-->

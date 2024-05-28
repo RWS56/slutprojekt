@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: "Nunito", sans-serif;
     box-sizing: border-box;
 }
 
@@ -297,7 +297,7 @@ footer {
     padding: 0 10%;
 }
 
-.classes-container:focus{
+.classes-container:focus {
     border: 3px red solid;
 }
 
@@ -334,7 +334,7 @@ footer {
     margin: 0 auto 20px;
 }
 
-#class-name{
+#class-name {
     width: 400px;
     height: 50px;
     border: none;
@@ -360,7 +360,7 @@ footer {
     margin: 20px 0;
 }
 
-.classes-left ul li{
+.classes-left ul li {
     display: flex;
     justify-content: space-evenly;
 }
@@ -372,17 +372,43 @@ footer {
 }
 
 /*class-list*/
-.classes-left ul{
+.classes-left ul {
     list-style: none;
     padding: 0;
     /* Jag är för freaky här att det funkar, jag kännner mig som en wizard*/
-    margin: 25px auto 0; 
-    background: #333;
+    margin: 25px auto 0;
+    background: #fff;
     border-radius: 20px;
     height: 300px;
     max-height: 300px;
     width: 450px;
     overflow: auto;
+}
+
+.classes-left ul li button {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    color: #000;
+}
+
+@media (max-width: 1080px) {
+
+    .classes-left ul,
+    .classes-right ul {
+        width: 70%;
+        /* Adjust as needed */
+        height: 50vh;
+        /* Adjust as needed */
+        max-height: 50vh;
+        /* Adjust as needed */
+    }
+
+    .classes-container {
+        flex-direction: column;
+        height: auto;
+        margin: auto auto;
+    }
 }
 
 @media (max-width: 850px) {
