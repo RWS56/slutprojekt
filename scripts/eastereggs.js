@@ -148,7 +148,6 @@ class Bouncyball {
         let hue = Math.floor(distance / 10);
         this.ball.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
 
-        //add gravity
         this.velocity.y += 0.1;
 
         this.position.x += this.velocity.x;
@@ -156,22 +155,24 @@ class Bouncyball {
 
         if (this.position.x + this.radius > window.innerWidth) {
             this.position.x = window.innerWidth - this.radius;
-            this.velocity.x *= -1;
+            this.velocity.x *= -0.9;
         }
-
+        
         if (this.position.x - this.radius < 0) {
             this.position.x = this.radius;
-            this.velocity.x *= -1;
+            this.velocity.x *= -0.9;
         }
-
+        
         if (this.position.y + this.radius > window.innerHeight) {
             this.position.y = window.innerHeight - this.radius;
-            this.velocity.y *= -1;
+            this.velocity.y *= -0.9;
+            this.velocity.x *= 0.99;
         }
-
+        
         if (this.position.y - this.radius < 0) {
             this.position.y = this.radius;
-            this.velocity.y *= -1;
+            this.velocity.y *= -0.9;
+            this.velocity.x *= 0.99;
         }
 
         this.ball.style.left = this.position.x + "px";

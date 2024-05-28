@@ -43,6 +43,10 @@ html {
     /*linear-gradient(178deg, rgba(255, 0, 0, 0.5), rgba(255, 255, 255, 0.5))*/
 }
 
+.groups{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/coolImage.jpg);
+}
+
 nav {
     display: flex;
     width: 85%;
@@ -474,6 +478,16 @@ footer {
         flex-direction: column;
         height: auto;
         margin: auto auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .contact-inputs {
+        width: 80vw;
+    }
+
+    .contact-right {
+        display: none;
     }
 }
 

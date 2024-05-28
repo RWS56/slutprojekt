@@ -7,3 +7,5 @@ document.getElementById("burger").addEventListener("click", () => {
 
     main.style.display = main.style.display === "none" ? "block" : "none";
 });
+
+//eventuellt lägg till en eventlysnare för att clicka på tjänster och att den då gert en en slumpmässigt utvald sida
