@@ -6,3 +6,9 @@ Hover effekt för Classes gejer
 Mobilanpassad Services knapp
 Ändra schoolinfo
 Ändra bollarnas uppdateringshastighet till setinterval 1000/60
+
+
+Tankar Gruppindelning
+En input eller dropdown // ngt så man kan väljd storleken
+därefter en knapp för att slumpa samt en dropdown med alla klasser man tidigare skapat.
+
