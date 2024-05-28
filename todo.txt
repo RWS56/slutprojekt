@@ -12,3 +12,8 @@ Tankar Gruppindelning
 En input eller dropdown // ngt så man kan väljd storleken
 därefter en knapp för att slumpa samt en dropdown med alla klasser man tidigare skapat.
 
+Fixa response för om oss delen för mobile
+Kanske göra så att Om Oss h1 inte åker uppochned
+
+Fixa effektiv logo fil-storleken
+Samt fiixa srcset för alla bilder

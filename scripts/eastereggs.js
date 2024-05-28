@@ -1,4 +1,35 @@
 //Lite roliga grejer jag lagt till på sidan.
+/*
+    detta skript hanterar lite roliga saker, eastereggs om jag får lov att kalla det så.
+    Det är en separat fil för att hålla koden ren och lättläslig.
+    Den körs endast på index.html så jag har också slängt i lite saker för att hantera om oss delen av index.html
+*/
+
+let readMore = document.getElementById("read-more");
+let readLess = document.getElementById("read-less");
+let aboutUsShort = document.getElementById("about-us-short");
+let aboutUsExtra = document.getElementById("about-us-extra");
+
+readMore.addEventListener("click", (e) => {
+    aboutUsShort.classList.remove("visible");
+    setTimeout(() => {
+        aboutUsExtra.classList.add("visible");
+    }, 500);
+});
+
+readLess.addEventListener("click", (e) => {
+    aboutUsExtra.classList.remove("visible");
+    setTimeout(() => {
+        aboutUsShort.classList.add("visible");
+    }, 500);
+});
+
+aboutUsShort.classList.add("visible");
+aboutUsExtra.classList.remove("visible");
+
+// Hädanefter börjar koden för index.html eastereggs !!!!
+
+
 let logoClicks = 0;
 
 document.getElementById("logo").addEventListener("click", (e) => {

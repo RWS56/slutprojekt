@@ -1,3 +1,8 @@
+/*
+Detta script hanterar klasser och elever. 
+Det är en separat fil för att hålla koden ren och lättläslig.
+*/
+
 let selectedClass;
 
 let classes = localStorage.getItem("classes") ? JSON.parse(localStorage.getItem("classes")) : [];
