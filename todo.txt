@@ -11,3 +11,5 @@ Kanske göra så att Om Oss h1 inte åker uppochned
 Fixa effektiv logo fil-storleken
 Samt fiixa srcset för alla bilder
 En karta och tabell under kontaktformuläret
+
+Fixa startmenyknapparna så att de länkar till ngt i easteregg.js

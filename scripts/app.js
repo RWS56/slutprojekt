@@ -8,4 +8,7 @@ document.getElementById("burger").addEventListener("click", () => {
     main.style.display = main.style.display === "none" ? "block" : "none";
 });
 
+document.getElementById("footer-copyright").addEventListener("click", (e) => {
+    document.querySelector("footer").classList.add("animate");
+});
 //eventuellt lägg till en eventlysnare för att clicka på tjänster och att den då gert en en slumpmässigt utvald sida

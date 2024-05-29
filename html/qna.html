@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poetsen+One&display=swap" rel="stylesheet">
+    <script defer src="../scripts/app.js"></script>
+    <script defer src="../scripts/quiz.js"></script>
+</head>
+<body>
+    <div class="banner q-and-a">
+        <header>
+            <nav>
+                <div id="header-container">
+                    <a href="../index.html"><img src="../images/logga.png" alt="logo" class="logo" id="logo"></a>
+                    <img src="../images/burgermenu.svg" alt="Burger Icon" class="burger" id="burger">
+                </div>
+                <ul id = "menu">
+                    <li><a href="../index.html">Hem</a></li>
+                    <li><a href="../index.html#about-section">Om Oss</a></li>
+                    <li><a href="./contacts.html">Kontakt</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn" id="dropdown">Tjänster</a>
+                        <div class="dropdown-content">
+                            <a href="./classes.html">Klasser</a>
+                            <a href="./randomize.html">Grupper</a>
+                            <a href="#">Platser</a>
+                            <a href="./qna.html">Kuriosa</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h1 id="qna-header">Frågesport</h1>
+                <div class="trivia-container">
+                    <button id="start-button"><span></span>Starta Quiz</button>
+                    <p class="animate"></p>
+                    <div id="questionnaire" class="animate"> <!--Such a fancy word indeed-->
+                        <h2 id="question">Question Here</h2>
+                        <div id="answers" class="answers-buttons">
+                            <button class="answer" id="answer1"><span></span>Answer 1</button>
+                            <button class="answer" id="answer2"><span></span>Answer 2</button>
+                            <button class="answer" id="answer3"><span></span>Answer 3</button>
+                            <button class="answer" id="answer4"><span></span>Answer 4</button>
+                        </div>
+                        <button id="next-button" class="animate"><span></span>Next Question</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p class="copyright" id="footer-copyright">
+                &copy; 2024 Effektivt Klassrum
+            </p>
+            <div class="affiliate-links">
+                <a href="https://github.com/rws56" target="_blank"><img src="../images/githubifylld.svg" alt="Github Link"></a>
+                <a href="https://www.youtube.com/channel/UCU2DMNJ138Ux1kmO8OG3nhQ" target="_blank"><img src="../images/icons8-youtube.svg" alt="Youtube Link"></a>
+                <a href="https://www.linkedin.com/in/ruben-steen-8a48b4269/" target="_blank"><img src="../images/icons8-linkedin.svg" alt="LinkedIn Link"></a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

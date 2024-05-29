@@ -7,11 +7,13 @@
 
 let readMore = document.getElementById("read-more");
 let readLess = document.getElementById("read-less");
+let aboutUsHeader = document.getElementById("about-header");
 let aboutUsShort = document.getElementById("about-us-short");
 let aboutUsExtra = document.getElementById("about-us-extra");
 
 readMore.addEventListener("click", (e) => {
     aboutUsShort.classList.remove("visible");
+    aboutUsHeader.classList.remove("visible");
     setTimeout(() => {
         aboutUsExtra.classList.add("visible");
     }, 500);
@@ -21,11 +23,14 @@ readLess.addEventListener("click", (e) => {
     aboutUsExtra.classList.remove("visible");
     setTimeout(() => {
         aboutUsShort.classList.add("visible");
+        aboutUsHeader.classList.add("visible");
     }, 500);
 });
 
 aboutUsShort.classList.add("visible");
 aboutUsExtra.classList.remove("visible");
+
+
 
 // Hädanefter börjar koden för index.html eastereggs !!!!
 
@@ -157,18 +162,18 @@ class Bouncyball {
             this.position.x = window.innerWidth - this.radius;
             this.velocity.x *= -0.9;
         }
-        
+
         if (this.position.x - this.radius < 0) {
             this.position.x = this.radius;
             this.velocity.x *= -0.9;
         }
-        
+
         if (this.position.y + this.radius > window.innerHeight) {
             this.position.y = window.innerHeight - this.radius;
             this.velocity.y *= -0.9;
             this.velocity.x *= 0.99;
         }
-        
+
         if (this.position.y - this.radius < 0) {
             this.position.y = this.radius;
             this.velocity.y *= -0.9;
