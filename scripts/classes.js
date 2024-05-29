@@ -2,13 +2,14 @@
 Detta script hanterar klasser och elever. 
 Det är en separat fil för att hålla koden ren och lättläslig.
 */
-
+//initierar variabler
 let selectedClass;
 
+//hämtar klasser från localstorage om det finns några annars skapas en tom array
 let classes = localStorage.getItem("classes") ? JSON.parse(localStorage.getItem("classes")) : [];
 classlist = document.getElementById("class-list");
 
-
+//För varje klass skapas en lista som jag "sätter ihop" här
 classes.forEach((classItem, index) => {
     let list = document.getElementById("class-list");
     let listItem = document.createElement("li");
@@ -46,9 +47,6 @@ classes.forEach((classItem, index) => {
     list.appendChild(listItem);
 });
 
-// name:{name "Te22A", students: ["John", "Jane", "Doe"]}
-console.log(classes);
-
 document.getElementById("create-class").addEventListener("click", () => {
     addClass();
 });
@@ -61,6 +59,7 @@ document.getElementById("class-name").addEventListener("input", (e) => {
     }
 });
 
+//bästa sättet jag kom på för att spara klasser så att det inte drar ner prestandan genom att spara allt för mycket, jag tror att det är en bra lösning
 window.addEventListener("beforeunload", saveClasses);
 
 document.getElementById("student-list").addEventListener("input", (e) => {
@@ -70,7 +69,8 @@ document.getElementById("student-list").addEventListener("input", (e) => {
 function saveClasses() {
     localStorage.setItem("classes", JSON.stringify(classes));
 }
-
+//Denna kod är i princip samma som den i början där jag skapar list-objekt för alla klasser från localstorage
+//skillnaden är att jag här inte har någon klass eller namn att utgå från så det blir lite annorlunda.
 function addClass() {
     let list = document.getElementById("class-list");
     let listItem = document.createElement("li");
