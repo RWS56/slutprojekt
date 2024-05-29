@@ -30,7 +30,15 @@ readLess.addEventListener("click", (e) => {
 aboutUsShort.classList.add("visible");
 aboutUsExtra.classList.remove("visible");
 
+document.getElementById("index-klasser").addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.href = "./html/classes.html";
+});
 
+document.getElementById("index-grupper").addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.href = "./html/randomize.html";
+});
 
 // Hädanefter börjar koden för index.html eastereggs !!!!
 

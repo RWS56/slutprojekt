@@ -8,6 +8,6 @@
 
 window.onload = function () {
     if (window.innerWidth < 600) {
-        document.querySelector("main").innerHTML = '<h1>Sidan är inte anpassad för denna enhet</h1>';
+        document.querySelector("main").innerHTML = '<h3>Sidan är inte anpassad för denna enhet</h3>';
     }
 }

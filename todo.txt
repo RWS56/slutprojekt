@@ -13,3 +13,5 @@ Samt fiixa srcset för alla bilder
 En karta och tabell under kontaktformuläret
 
 Fixa startmenyknapparna så att de länkar till ngt i easteregg.js
+
+OM DU LÄSER DETTA SÅ HANN JAG INTE FIXA ALLT SOM JAG VILLE, DET FICK BLI ETT URVAL

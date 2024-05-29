@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gruppering</title>
+    <title>Trivia</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poetsen+One&display=swap" rel="stylesheet">
     <script defer src="../scripts/app.js"></script>
-    <script defer src="../scripts/randomize.js"></script>
-    <script src="../scripts/antiMobileDevices.js"></script>
+    <script defer src="../scripts/quiz.js"></script>
 </head>
 <body>
-    <div class="banner groups">
+    <div class="banner logistic">
         <header>
             <nav>
                 <div id="header-container">
@@ -36,36 +35,44 @@
                 </ul>
             </nav>
         </header>
-
         <main>
-            <section>
-                <h1>Skapa Grupper</h1>
-                <div class="groups-input-container">
-                    <div class="groups-input-left">
-                        <p>Klass</p>
-                        <select name="class" id="groups-select">
-                            <!--<option value="class1">Te22A Test</option> fixa detta med ett skript!-->
-                        </select>
-                    </div>
-                    <div class="groups-input-right">
-                        <p>Antal Grupper</p>
-                        <input type="number" value ="1" min="1" max="30" id="groups-amount">
-                    </div>
-                    <button id="generate-groups"><span></span>Generera Grupper</button>
-                </div>
-            </section>
-            <ul id="groups-list">
-                <!--<li class="group">
-                    <h2>Grupp 1</h2>
-                    <ul class="group-members">
-                        <li>Medlem 1</li>
-                        <li>Medlem 2</li>
-                        <li>Medlem 3</li>
-                    </ul>
-                </li>-->
-            </ul>
+            <iframe width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=18.059546649456028%2C59.331752947267354%2C18.06574255228043%2C59.33352596439562&amp;layer=mapnik&amp;marker=59.332639467397094%2C18.062644600868225" style="border: 1px solid black" id="karta"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=59.33264&amp;mlon=18.06264#map=19/59.33264/18.06264">Visa större karta</a></small>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Location</th>
+                        <th>Number</th>
+                        <th>Address</th>
+                        <th>Öppettider</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Stockholm</td>
+                        <td>+46 8 123 456 78</td>
+                        <td>Drottninggatan 50, 111 21 Stockholm</td>
+                        <td>08:30 - 18:30</td>
+                    </tr>
+                    <tr>
+                        <td>Göteborg</td>
+                        <td>+46 31 123 456 78</td>
+                        <td>Avenyn 1, 411 36 Göteborg</td>
+                        <td>09:00 - 18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Malmö</td>
+                        <td>+46 40 123 456 78</td>
+                        <td>Stortorget 1, 211 34 Malmö</td>
+                        <td>11:00 - 19:00</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">För almänna förfrågningar kontakta oss via telefon eller <a href="../html/contacts.html">här</a></td>
+                    </tr>
+                </tfoot>
+            </table>
         </main>
-
         <footer>
             <p class="copyright" id="footer-copyright">
                 &copy; 2024 Effektivt Klassrum

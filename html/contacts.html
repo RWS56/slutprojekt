@@ -16,8 +16,8 @@
         <header>
             <nav>
                 <div id="header-container">
-                    <a href="../index.html"><img src="../images/logga.png" alt="logo" class="logo" id="logo"></a>
-                    <img src="../images/burgermenu.svg" alt="Burger Icon" class="burger" id="burger">
+                    <a href="../index.html"><img src="../images/logga.png" alt="logo" class="logo" id="logo" loading="lazy"></a>
+                    <img src="../images/burgermenu.svg" alt="Burger Icon" class="burger" id="burger" loading="lazy">
                 </div>
                 <ul id = "menu">
                     <li><a href="../index.html">Hem</a></li>
@@ -28,7 +28,7 @@
                         <div class="dropdown-content">
                             <a href="./classes.html">Klasser</a>
                             <a href="./randomize.html">Grupper</a>
-                            <a href="#">Platser</a>
+                            <a href="./locations.html">Platser</a>
                             <a href="./qna.html">Kuriosa</a>
                         </div>
                     </li>
@@ -40,9 +40,9 @@
                 &copy; 2024 Effektivt Klassrum
             </p>
             <div class="affiliate-links">
-                <a href="https://github.com/rws56" target="_blank"><img src="../images/githubifylld.svg" alt="Github Link"></a>
-                <a href="https://www.youtube.com/channel/UCU2DMNJ138Ux1kmO8OG3nhQ" target="_blank"><img src="../images/icons8-youtube.svg" alt="Youtube Link"></a>
-                <a href="https://www.linkedin.com/in/ruben-steen-8a48b4269/" target="_blank"><img src="../images/icons8-linkedin.svg" alt="LinkedIn Link"></a>
+                <a href="https://github.com/rws56" target="_blank"><img src="../images/githubifylld.svg" alt="Github Link" loading="lazy"></a>
+                <a href="https://www.youtube.com/channel/UCU2DMNJ138Ux1kmO8OG3nhQ" target="_blank"><img src="../images/icons8-youtube.svg" alt="Youtube Link" loading="lazy"></a>
+                <a href="https://www.linkedin.com/in/ruben-steen-8a48b4269/" target="_blank"><img src="../images/icons8-linkedin.svg" alt="LinkedIn Link" loading="lazy"></a>
             </div>
         </footer>
     </div>
@@ -57,13 +57,14 @@
                 <input type="text" name="name" placeholder="Ditt Namn" class="contact-inputs person-input" id="input-name" required>
                 <input type="email" name="email" placeholder="Din E-post" class="contact-inputs email-input" id="input-mail" required>
                 <textarea name="message" placeholder="Ditt Meddelande" class="contact-inputs" id="input-textarea" required></textarea>
-                <button type="submit" class="contact-inputs">Skicka<img src="../images/arrow-right.svg" alt="Submit Arrow"></button>
+                <button type="submit" class="contact-inputs">Skicka<img src="../images/arrow-right.svg" alt="Submit Arrow" loading="lazy"></button>
             </form>
             <div class="contact-right">
                 <!--Lägg till nån hero eller ngt-->
-                <img src="../images/effektivlogo.png" alt="">
+                <img src="../images/effektivlogo1.png" srcset="../images/effektivlogo1.png 500w, ../images/effektivlogo0.png 1000w, ../images/effektivlogo.png 2000w" sizes="(max-width: 600px) 500px, (max-width: 1200px) 1000px, 2000px" alt="Effektivt Klassrum Company Logo" loading="lazy">
             </div>
         </div>
+        
     </main>
 </body>
 </html>
