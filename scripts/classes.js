@@ -78,7 +78,7 @@ function addClass() {
     let cross = document.createElement("img");
     cross.src = "../images/cross.svg";
 
-    let newClass = { name: `New Class ${classes.length}`, students: [] };
+    let newClass = { name: `Klass ${classes.length}`, students: [] };
     classes.push(newClass);
 
     button.innerHTML = newClass.name;

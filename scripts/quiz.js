@@ -91,7 +91,7 @@ function showQuestion() {
                 location.reload();
             }
             console.log(this.innerHTML + " " + questions[currentQuestion].correct_answer);
-            if (this.innerHTML === questions[currentQuestion].correct_answer) {
+            if (this.innerHTML === questions[currentQuestion].correct_answer && this.classList.contains("right-answer") === false){
                 correctAnswers++;
             }
             showAnswers();

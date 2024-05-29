@@ -7,7 +7,15 @@
 */
 
 window.onload = function () {
-    if (window.innerWidth < 600) {
+    if (window.innerWidth < 1080) {
+        document.querySelector("main").innerHTML = '<h3>Sidan är inte anpassad för denna enhet</h3>';
+    }
+}
+
+let maincontent;
+window.onresize = function () {
+    if (window.innerWidth < 1080) {
+        maincontent = document.querySelector("main").innerHTML;
         document.querySelector("main").innerHTML = '<h3>Sidan är inte anpassad för denna enhet</h3>';
     }
 }
