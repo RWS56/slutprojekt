@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gruppering</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poetsen+One&display=swap" rel="stylesheet">
     <script defer src="../scripts/app.js"></script>
+    <script defer src="../scripts/randomize.js"></script>
 </head>
 <body>
     <div class="banner groups">
         <header>
             <nav>
                 <div id="header-container">
-                    <img src="../images/logga.png" alt="logo" class="logo" id="logo">
+                    <a href="../index.html"><img src="../images/logga.png" alt="logo" class="logo" id="logo"></a>
                     <img src="../images/burgermenu.svg" alt="Burger Icon" class="burger" id="burger">
                 </div>
                 <ul id = "menu">
@@ -33,11 +37,32 @@
         </header>
 
         <main>
-            <select name="class" id="">
-                <!--<option value="class1">Te22A Test</option> fixa detta med ett skript!-->
-            </select>
-            <input type="number" min="1" max="30">
-            <button><span></span>Generate Groups</button>
+            <section>
+                <h1>Skapa Grupper</h1>
+                <div class="groups-input-container">
+                    <div class="groups-input-left">
+                        <p>Klass</p>
+                        <select name="class" id="groups-select">
+                            <!--<option value="class1">Te22A Test</option> fixa detta med ett skript!-->
+                        </select>
+                    </div>
+                    <div class="groups-input-right">
+                        <p>Antal Grupper</p>
+                        <input type="number" value ="1" min="1" max="30" id="groups-amount">
+                    </div>
+                    <button id="generate-groups"><span></span>Generera Grupper</button>
+                </div>
+            </section>
+            <ul id="groups-list">
+                <!--<li class="group">
+                    <h2>Grupp 1</h2>
+                    <ul class="group-members">
+                        <li>Medlem 1</li>
+                        <li>Medlem 2</li>
+                        <li>Medlem 3</li>
+                    </ul>
+                </li>-->
+            </ul>
         </main>
 
         <footer>
