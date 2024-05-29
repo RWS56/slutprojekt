@@ -13,6 +13,8 @@ let answerElements = [
 ];
 
 async function getQuestions() {
+    //requestar 10 frågor från opentdb.com, någon api jag hittade efter att skolverket api:et inte fungerade för att de inte kunde hantera CORS och jag ville inte använda en proxy 
+    //och med inte vela menar jag att jag inte visste hur ajg skulle göra det
     try {
         let response = await fetch("https://opentdb.com/api.php?amount=10&type=multiple");
         let data = await response.json();
@@ -22,6 +24,7 @@ async function getQuestions() {
     }
 }
 
+//När man startar tar jag bort allt oviktigt, för att göra det lättare att fokusera på frågorna samt blir det bättre för mobil-enheter
 document.getElementById("start-button").addEventListener("click", (e) => {
     getQuestions().then(() => {
         document.getElementById("questionnaire").classList.add("visible")
@@ -52,6 +55,7 @@ function shuffle(array) {
     return array;
 }
 
+//lägger till klasser som sedan använder css för en liten "cool" effekt
 function showAnswers() {
     answerElements.forEach(answerElement => {
         if (answerElement.innerHTML === questions[currentQuestion].correct_answer) {
@@ -63,6 +67,7 @@ function showAnswers() {
     });
 }
 
+//Visar frågan och svaralternativen slumpar ordningen på svaren och kollar om man klickat rätt osv, inte super komplicerat
 function showQuestion() {
     answerElements.forEach(answerElement => {
         answerElement.classList.remove("right-answer", "wrong-answer");

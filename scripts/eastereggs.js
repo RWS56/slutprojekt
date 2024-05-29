@@ -73,7 +73,7 @@ function createParticle(e) { //baserad på partiklar från js spel jag gjort tid
 
     particle.style.position = 'absolute';
     particle.style.backgroundColor = `rgba(168, 168, 168, ${1 - Math.random()})`;
-    particle.style.filter = `blur(${Math.random() * 2}px)`;
+    particle.style.filter = `blur(${Math.random() * 2}px)`; //Detta skapar lagg (i stora mängder) men det är värt det!
     particle.style.pointerEvents = 'none';
 
     let size = Math.floor(Math.random() * 8);
@@ -87,6 +87,7 @@ function createParticle(e) { //baserad på partiklar från js spel jag gjort tid
     let destinationX = (Math.random() - 0.5) * 2 * 200;
     let destinationY = (Math.random() - 0.5) * 2 * 200;
 
+    //halvlånad kod för att göra snygga partiklar
     let animation = particle.animate([
         {
             transform: `translate(0, 0)`,
@@ -142,6 +143,7 @@ class Bouncyball {
     }
 
     update() {
+        //Kollar avståndet till musen, därefter pytagoras och ser till att inte dela med 0
         let dx = mousePos.x - this.position.x;
         let dy = mousePos.y - this.position.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
@@ -150,6 +152,7 @@ class Bouncyball {
             dy /= distance;
         }
 
+        //Om bollen är nära musen så accelererar den mot musen medan hastigheten är begränsad inom givna intervallet
         if (distance < 200) {
             this.velocity.x += dx * 0.3;
             this.velocity.x = Math.min(10, Math.max(-10, this.velocity.x));
@@ -157,15 +160,19 @@ class Bouncyball {
             this.velocity.y = Math.min(10, Math.max(-10, this.velocity.y));
         }
 
-        //set balls color based on distance
+        //Färgen sätts baserat på avståndet till musen som uträknat tidigare
+        //Inte rgb för det blev inge fint
         let hue = Math.floor(distance / 10);
         this.ball.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
 
+        //dålig gravitation
         this.velocity.y += 0.1;
 
+        //adderar den uträknade hastigheten till positionen
         this.position.x += this.velocity.x;
         this.position.y += this.velocity.y;
 
+        //fyrkantig kollisionsberäkning med väggarna runt index.html hem sidan (inte om oss)
         if (this.position.x + this.radius > window.innerWidth) {
             this.position.x = window.innerWidth - this.radius;
             this.velocity.x *= -0.9;
@@ -195,6 +202,7 @@ class Bouncyball {
 
 // Game loop
 function update() {
+    //uppdatear alla bollar med skärmens refresh rate
     ballList.forEach(ball => ball.update());
     requestAnimationFrame(update);
 }

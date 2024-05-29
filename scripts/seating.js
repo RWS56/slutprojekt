@@ -1,3 +1,5 @@
+//Ignorera, jag hade inte tid eller ork för detta
+
 class Seat{
     constructor(row, col){
         this.row = row;

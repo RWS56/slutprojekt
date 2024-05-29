@@ -14,11 +14,13 @@ function getSelectedClass() {
 }
 
 document.getElementById("groups-amount").addEventListener("blur", function () {
+    //Om värdet är mindre än 1 sätt det till 1 för att man kan inte ha mindre än 1 grupp
     if (this.value < 1) {
         this.value = 1;
     }
-    if (this.value > 40) {
-        this.value = 30;
+    //det känns inte rimligt att kunna försöka skapa 1273861238971203 grupper så jag sätter en maxgräns på 100
+    if (this.value > 100) {
+        this.value = 100;
     }
 });
 
@@ -34,6 +36,8 @@ function fisherYatesShuffle(array) {
     return array;
 }
 
+//slumpar grupperna ser till att alla grupper har lika många elever om inte så fördelas de så jämnt det går
+//om vi har 30 elever och försöker skapa 100 grupper så kommer vi få 30 grupper med 1 elev
 function randomizeGroups() {
     let students = getSelectedClass().split(",");
     students = fisherYatesShuffle(students);
@@ -51,6 +55,7 @@ function randomizeGroups() {
     return groups;
 }
 
+//Gör så at tman faktiskt kan generera grupperna utifrån sidans UI samt lägger till grupperna så att det blir synligt för användaren
 document.getElementById("generate-groups").addEventListener("click", () => {
     let groups = randomizeGroups();
     let groupList = document.getElementById("groups-list");
